@@ -97,19 +97,6 @@
       },
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
-    "com.unity.cinemachine": {
-      "version": "3.1.4",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.splines": "2.0.0",
-        "com.unity.modules.imgui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-=======
->>>>>>> a8a99d4dc3a29500aa8895e7ea93100dddb0d881
     "com.unity.collab-proxy": {
       "version": "2.10.0",
       "depth": 0,
@@ -146,11 +133,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.23",
+      "version": "2.0.25",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.test-framework": "1.1.9"
+        "com.unity.test-framework": "1.1.31"
       },
       "url": "https://packages.unity.com"
     },
@@ -235,16 +222,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
-    "com.unity.settings-manager": {
-      "version": "2.1.0",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-=======
->>>>>>> a8a99d4dc3a29500aa8895e7ea93100dddb0d881
     "com.unity.shadergraph": {
       "version": "17.2.0",
       "depth": 1,
@@ -254,20 +231,6 @@
         "com.unity.searcher": "4.9.3"
       }
     },
-<<<<<<< HEAD
-    "com.unity.splines": {
-      "version": "2.8.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.mathematics": "1.2.1",
-        "com.unity.modules.imgui": "1.0.0",
-        "com.unity.settings-manager": "1.0.3"
-      },
-      "url": "https://packages.unity.com"
-    },
-=======
->>>>>>> a8a99d4dc3a29500aa8895e7ea93100dddb0d881
     "com.unity.test-framework": {
       "version": "1.5.1",
       "depth": 0,
