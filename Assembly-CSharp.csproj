@@ -48,16 +48,19 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Blocks\LockBlock.cs" />
     <Compile Include="Assets\Scripts\MonsterStomp.cs" />
     <Compile Include="Assets\Scripts\Blocks\HeavyBlock.cs" />
     <Compile Include="Assets\Scripts\Blocks\KeyBlock.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\Extensions.cs" />
     <Compile Include="Assets\Scripts\Blocks\TimerBlock.cs" />
     <Compile Include="Assets\Scripts\Blocks\StandardBlock.cs" />
     <Compile Include="Assets\Scripts\Blocks\KeySpawner.cs" />
     <Compile Include="Assets\Scripts\Patrol.cs" />
     <Compile Include="Assets\Scripts\GravGun\BulletCycle.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementScript.cs" />
+    <Compile Include="Assets\Scripts\Blocks\BarrierBlock.cs" />
     <Compile Include="Assets\Scripts\MonsterDamage.cs" />
     <Compile Include="Assets\Scripts\MonsterMovement.cs" />
     <Compile Include="Assets\Scripts\GravGun\BulletBehaviour.cs" />
@@ -69,6 +72,7 @@
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Blocks\AntigravTimerBlock.cs" />
     <Compile Include="Assets\Scripts\GravGun\GunAim.cs" />
+    <Compile Include="Assets\Scripts\Blocks\Switch.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -6,6 +6,7 @@ public class BlockBehaviour : MonoBehaviour
 
     [SerializeField] public float gravityForce = 9.81f/3;
     public Vector2 gravity;
+	private Vector2 currVelocity;
 
     public enum BlockType
     {

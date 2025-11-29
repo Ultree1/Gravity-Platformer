@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: -626438420419113095}
   - component: {fileID: 34363978423274934}
   - component: {fileID: 89869525307110870}
+  - component: {fileID: -9116115334930652029}
   m_Layer: 7
   m_Name: LockBlock
-  m_TagString: Lock
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,3 +182,15 @@ MonoBehaviour:
   gravityForce: 3.2700002
   gravity: {x: 0, y: 0}
   blockType: 7
+--- !u!114 &-9116115334930652029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322416163143143608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7534b6e39352224438a335b1f3826d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockBlock

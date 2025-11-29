@@ -9,7 +9,7 @@ TagManager:
   - UpBullet
   - LeftBullet
   - RightBullet
-  - Lock
+  - Key
   layers:
   - Default
   - TransparentFX

@@ -2,15 +2,24 @@ using UnityEngine;
 
 public class KeyBehaviour : MonoBehaviour
 {
-    public void Collect()
+	private void OnTriggerEnter2D(Collider2D other)
 	{
-		GameObject[] lockInstances = GameObject.FindGameObjectsWithTag("Lock");
+		if (other.CompareTag("Player"))
+		{
+			CollectKey();
+			Destroy(gameObject);
+		}
+	}
+
+    public void CollectKey()
+	{
+		LockBlock[] lockInstances = Object.FindObjectsByType<LockBlock>(FindObjectsSortMode.None);
         
         // play unlock sound
 
-        foreach (GameObject instance in lockInstances)
+        foreach (LockBlock instance in lockInstances)
 		{
-			Destroy(instance, 0.1f);
+			instance.unlock();
 		}
 	}
 }
