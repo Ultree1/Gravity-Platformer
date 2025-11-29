@@ -2,24 +2,24 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-<<<<<<< HEAD
   serializedVersion: 3
   tags:
   - Weak Point
-=======
-  serializedVersion: 2
-  tags: []
->>>>>>> a8a99d4dc3a29500aa8895e7ea93100dddb0d881
+  - DownBullet
+  - UpBullet
+  - LeftBullet
+  - RightBullet
+  - Key
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ground
+  - Block
+  - Key
   - 
   - 
   - 
@@ -47,17 +47,5 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
-  - name: Background
-    uniqueID: 332758277
-    locked: 0
-  - name: Foreground
-    uniqueID: 4030211705
-    locked: 0
-  - name: ForGround 2
-    uniqueID: 235213273
-    locked: 0
   m_RenderingLayers:
   - Default
-=======
->>>>>>> a8a99d4dc3a29500aa8895e7ea93100dddb0d881

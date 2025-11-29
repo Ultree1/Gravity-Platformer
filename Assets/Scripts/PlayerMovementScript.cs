@@ -1,22 +1,47 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class PlayerMovementScript : MonoBehaviour
 {
     private Rigidbody2D body;
 
-    private void Awake()
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float jumpForce = 8f;
+    [SerializeField] private LayerMask ground;
+    private float inputAxis;
+
+    public bool grounded { get; private set; }
+    public bool isJumping { get; private set; }
+
+    private void Start()
     {
         body = GetComponent<Rigidbody2D>();
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     private void Update()
-    {
-        body.linearVelocity = new Vector2(Input.GetAxis("Horizontal"),body.linearVelocity.y);
-    }
+	{
+        grounded = body.Raycast(Vector2.down, ground);
+        if (grounded)
+		{
+            isJumping = body.linearVelocity.y > 0f;
+			GroundedMovement();
+		}
+
+		HorizontalMovement();
+	}
+
+    private void HorizontalMovement()
+	{
+        inputAxis = Input.GetAxis("Horizontal");
+		body.linearVelocity = new Vector2(inputAxis * moveSpeed, body.linearVelocity.y);
+	}
+
+    private void GroundedMovement()
+	{
+		if (Input.GetKey(KeyCode.Space) && isJumping == false)
+		{
+			Vector2 currVelocity = body.linearVelocity;
+            currVelocity.y = jumpForce;
+            body.linearVelocity = currVelocity;
+		}
+	}
 }
