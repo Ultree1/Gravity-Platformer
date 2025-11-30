@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance {get; private set; }
 
-    [SerializeField] string levelName;
+    private string newGameLevel = "GravTestLevel";
 
     private void Awake()
     {
@@ -27,15 +27,8 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        Debug.Log("Game Start.");
-        LoadLevel(levelName);
+        LoadLevel(newGameLevel);
     }
-
-     public void QuitGame()
-	{
-        Debug.Log("Game Quit.");
-		Application.Quit();
-	}
 
     private void LoadLevel() {
         string currentScene = SceneManager.GetActiveScene().name;
@@ -52,25 +45,14 @@ public class GameManager : MonoBehaviour
 		LoadLevel();
 	}
 
-    public void WinLevel(string levelName)
+    public void NewLevel(string nextLevel)
     {
-        LoadLevel(levelName);
+        LoadLevel(nextLevel);
     }
 
-    public void ResetLevel()
+    public void GameOver()
     {
+        PlayerPrefs.SetString("PreviousLevelName", SceneManager.GetActiveScene().name);
         LoadLevel("GameOver");
-    }
-
-    public void ResetLevel(bool restart)
-    {
-        if (restart)
-		{
-			LoadLevel();
-		}
-        else
-		{
-			LoadLevel("GameOver");
-		}
     }
 }

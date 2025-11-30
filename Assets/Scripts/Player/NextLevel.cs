@@ -3,18 +3,26 @@ using System.Collections;
 
 public class NextLevel : MonoBehaviour
 {
+    private Camera mainCamera;
+
     private Rigidbody2D rb;
     private PlayerBehaviour playerBehaviour;
     private PlayerMovementScript playerMovement;
+
     private PlayerBehaviour.WalkDirection moveDirection;
     private float moveSpeed;
     private string nextLevel;
 
     private void OnEnable()
 	{
+        mainCamera = Camera.main;
+
         rb = GetComponent<Rigidbody2D>();
         playerBehaviour = GetComponent<PlayerBehaviour>();
         playerMovement = GetComponent<PlayerMovementScript>();
+
+        mainCamera.GetComponent<CameraFollow>().enabled = false;
+
 		moveDirection = playerBehaviour.nextLevelDirection;
         nextLevel = playerBehaviour.nextLevel;
 
@@ -45,6 +53,6 @@ public class NextLevel : MonoBehaviour
             yield return null;
 		}
 
-        GameManager.Instance.WinLevel(nextLevel);
+        GameManager.Instance.NewLevel(nextLevel);
 	}
 }
