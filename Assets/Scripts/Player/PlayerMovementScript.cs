@@ -4,11 +4,13 @@ public class PlayerMovementScript : MonoBehaviour
 {
     private Rigidbody2D body;
 
+    [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private LayerMask ground;
 
-    public float moveSpeed = 5f;
+
     private float inputAxis;
+
 
     public bool grounded { get; private set; }
     public bool isJumping { get; private set; }
