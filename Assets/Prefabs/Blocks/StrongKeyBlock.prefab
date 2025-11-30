@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.24528301, g: 0.24204342, b: 0.24204342, a: 1}
+  m_Color: {r: 0.7165312, g: 0.7735849, b: 0.23791379, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1322416163143143608}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
@@ -180,6 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b8bca19c024d243b6437efe90a2300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockBehaviour
+  collideLayer:
+    serializedVersion: 2
+    m_Bits: 200
   gravityForce: 3.2700002
   gravity: {x: 0, y: 0}
   blockType: 5

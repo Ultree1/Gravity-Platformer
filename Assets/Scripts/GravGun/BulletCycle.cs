@@ -12,7 +12,7 @@ public class BulletCycle : MonoBehaviour
 	private Vector2 scrollValue;
     private GunAim gunAim;
 
-    private int BulletType = 0;
+    public int bulletType = 3;
     // Type 0: Right
     // Type 1: Up
     // Type 2: Left
@@ -36,25 +36,25 @@ public class BulletCycle : MonoBehaviour
         
 		if (scrollValue.y > 0f)
 		{
-			if (BulletType >= 3)
+			if (bulletType >= 3)
             {
-				BulletType = 0;
+				bulletType = 0;
 			}
             else
 			{
-				BulletType++;
+				bulletType++;
 			}
 		}
 
         if (scrollValue.y < 0f)
 		{
-			if (BulletType <= 0)
+			if (bulletType <= 0)
 			{
-				BulletType = 3;
+				bulletType = 3;
 			}
             else
 			{
-				BulletType--;
+				bulletType--;
 			}
 		}
 
@@ -64,22 +64,22 @@ public class BulletCycle : MonoBehaviour
 	{
         if (gunAim != null)
 		{
-		    if (BulletType == 0)
+		    if (bulletType == 0)
 			{
 				bullet = rightBullet;
 			}
 
-            else if (BulletType == 1)
+            else if (bulletType == 1)
 		    {
                 bullet = upBullet;
 		    }
 
-            else if (BulletType == 2)
+            else if (bulletType == 2)
 		    {
                 bullet = leftBullet;
 		    }
             
-            else if (BulletType == 3)
+            else if (bulletType == 3)
 		    {
                 bullet = downBullet;
 		    }

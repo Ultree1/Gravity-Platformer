@@ -6,7 +6,6 @@ public class StrongKeyBlock : MonoBehaviour
 	private BlockBehaviour.BlockType heavy = BlockBehaviour.BlockType.Heavy;
 	private BlockBehaviour.BlockType strongKey = BlockBehaviour.BlockType.StrongKey;
 	private BlockBehaviour.BlockType key = BlockBehaviour.BlockType.Key;
-	private BlockBehaviour.BlockType lockB = BlockBehaviour.BlockType.Lock;
 	public Transform SpawnerPosition;
 
 	private Rigidbody2D rb;
@@ -18,7 +17,7 @@ public class StrongKeyBlock : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		blockBehaviour = GetComponent<BlockBehaviour>();
 		rb.gravityScale = 0;
-		rb.mass = 100;
+		rb.mass = 50;
 		blockBehaviour.gravity = Vector2.down;
 	}
 
@@ -33,7 +32,7 @@ public class StrongKeyBlock : MonoBehaviour
 		{
 			BlockBehaviour collisionBlock = collision.gameObject.GetComponent<BlockBehaviour>();
 			BlockBehaviour.BlockType colBlock = collisionBlock.blockType;
-			if (colBlock != heavy && colBlock != strongKey && colBlock != lockB && velocity >= 10)
+			if (colBlock != heavy && colBlock != strongKey && velocity >= 10)
 			{
 				// Play destruction animation
 

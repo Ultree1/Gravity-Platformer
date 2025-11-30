@@ -6,7 +6,6 @@ public class HeavyBlock : MonoBehaviour
 	private BlockBehaviour.BlockType heavy = BlockBehaviour.BlockType.Heavy;
 	private BlockBehaviour.BlockType strongKey = BlockBehaviour.BlockType.StrongKey;
 	private BlockBehaviour.BlockType key = BlockBehaviour.BlockType.Key;
-	private BlockBehaviour.BlockType lockB = BlockBehaviour.BlockType.Lock;
 
 	private Rigidbody2D rb;
 	private BlockBehaviour blockBehaviour;
@@ -32,7 +31,7 @@ public class HeavyBlock : MonoBehaviour
 		{
 			BlockBehaviour collisionBlock = collision.gameObject.GetComponent<BlockBehaviour>();
 			BlockBehaviour.BlockType colBlock = collisionBlock.blockType;
-			if (colBlock != heavy && colBlock != lockB && velocity >= 10)
+			if (colBlock != heavy && velocity >= 10)
 			{
 				// Play destruction animation
 
