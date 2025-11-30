@@ -7,7 +7,10 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private LayerMask ground;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip jumpClip;
     private float inputAxis;
+    
 
     public bool grounded { get; private set; }
     public bool isJumping { get; private set; }
@@ -42,6 +45,10 @@ public class PlayerMovementScript : MonoBehaviour
 			Vector2 currVelocity = body.linearVelocity;
             currVelocity.y = jumpForce;
             body.linearVelocity = currVelocity;
+            if (audioSource != null && jumpClip != null)
+            {
+                audioSource.PlayOneShot(jumpClip);
+            }
 		}
 	}
 }
