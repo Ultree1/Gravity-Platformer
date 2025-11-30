@@ -624,6 +624,108 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &780884191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7240613517226088696, guid: b9b990205566b4840943acbecbf4d738, type: 3}
+  m_PrefabInstance: {fileID: 1703564302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &780884192
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780884191}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &817585078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1393,6 +1495,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1213596499098452488, guid: b9b990205566b4840943acbecbf4d738, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 780884192}
+    - target: {fileID: 1213596499098452488, guid: b9b990205566b4840943acbecbf4d738, type: 3}
+      propertyPath: gunFireClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c6e5b758479a84ad0ae48f70a3b6b191, type: 3}
+    - target: {fileID: 2655753974170883797, guid: b9b990205566b4840943acbecbf4d738, type: 3}
+      propertyPath: jumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 864bc0f2a5bac493182c4793df10a422, type: 3}
+    - target: {fileID: 2655753974170883797, guid: b9b990205566b4840943acbecbf4d738, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 780884192}
     - target: {fileID: 5803581474561989141, guid: b9b990205566b4840943acbecbf4d738, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.89
@@ -1440,7 +1558,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7240613517226088696, guid: b9b990205566b4840943acbecbf4d738, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 780884192}
   m_SourcePrefab: {fileID: 100100000, guid: b9b990205566b4840943acbecbf4d738, type: 3}
 --- !u!1001 &1752226311
 PrefabInstance:
