@@ -6,6 +6,9 @@ public class GunAim : MonoBehaviour
     [SerializeField] private Transform bulletSpawnPoint;
     public GameObject bullet;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip gunFireClip;
+
     private GameObject bulletInst;
 
     private Vector2 mousePosition;
@@ -47,7 +50,7 @@ public class GunAim : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // Spawn bullet
+            audioSource.PlayOneShot(gunFireClip);
             bulletInst = Instantiate(bullet, bulletSpawnPoint.position, gun.transform.rotation);
         }
     }
