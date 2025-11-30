@@ -9,6 +9,7 @@ public class AntigravBlock : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D>();
 		blockBehaviour = GetComponent<BlockBehaviour>();
+		rb.mass = 10;
 		rb.gravityScale = 0;
 	}
 
@@ -16,22 +17,22 @@ public class AntigravBlock : MonoBehaviour
 	{
 		if (bulletNum.Equals(0))
 		{
-			rb.linearVelocity = Vector2.right * blockBehaviour.gravityForce;
+			blockBehaviour.gravity = Vector2.right;
 		}
 
         else if (bulletNum.Equals(1))
 		{
-			rb.linearVelocity = Vector2.up * blockBehaviour.gravityForce;
+			blockBehaviour.gravity = Vector2.up;
 		}
 
         else if (bulletNum.Equals(2))
 		{
-			rb.linearVelocity = Vector2.left * blockBehaviour.gravityForce;
+			blockBehaviour.gravity = Vector2.left;
 		}
 
         else if (bulletNum.Equals(3))
 		{
-			rb.linearVelocity = Vector2.down * blockBehaviour.gravityForce;
+			blockBehaviour.gravity = Vector2.down;
 		}
 	}
 }

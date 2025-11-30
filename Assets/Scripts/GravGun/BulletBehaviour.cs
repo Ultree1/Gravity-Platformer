@@ -58,19 +58,19 @@ public class BulletBehaviour : MonoBehaviour
         }        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         // is collision within objectDestroysBullet layerMask
-        if ((objectDestroysBullet.value & (1 << collision.gameObject.layer)) > 0)
+        if ((objectDestroysBullet.value & (1 << other.gameObject.layer)) > 0)
         {
             // spawn particles
 
             // play sound FX
 
             // destroy bullet
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Block"))
+            if (other.gameObject.layer == LayerMask.NameToLayer("Block"))
 			{
-				BlockBehaviour blockBehaviour = collision.gameObject.GetComponent<BlockBehaviour>();
+				BlockBehaviour blockBehaviour = other.gameObject.GetComponent<BlockBehaviour>();
                 blockBehaviour.Hit(bulletNum);
 			}
             Destroy(gameObject);

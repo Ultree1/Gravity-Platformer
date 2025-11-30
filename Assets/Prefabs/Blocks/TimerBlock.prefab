@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.98103654, g: 1, b: 0.6094339, a: 1}
+  m_Color: {r: 0.25702384, g: 0.7132075, b: 0.28053027, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1322416163143143608}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
@@ -194,4 +194,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e3dc8cec731b5479fb717a9ca54f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerBlock
-  resetTimer: 0.5
+  resetTimer: 0.25

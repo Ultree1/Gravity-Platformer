@@ -4,9 +4,10 @@ public class BlockBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    [SerializeField] public float gravityForce = 9.81f/3;
+	public float gravityForce = 9.81f/3;
     public Vector2 gravity;
-	private Vector2 currVelocity;
+
+	private bool Antigrav = false;
 
     public enum BlockType
     {
@@ -16,19 +17,29 @@ public class BlockBehaviour : MonoBehaviour
 	AntigravTimer,
 	Heavy,
 	StrongKey,
-	Key,
-	Lock
+	Key
     }
     public BlockType blockType;
 
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		if (blockType == BlockType.Antigrav || blockType == BlockType.AntigravTimer)
+		{
+			Antigrav = true;
+		}
 	}
 
     private void Update()
 	{
-		rb.AddForce(gravity * gravityForce * rb.mass, ForceMode2D.Force);
+		if (!Antigrav)
+		{
+			rb.AddForce(gravity * gravityForce * rb.mass, ForceMode2D.Force);
+		}
+		else
+		{
+			rb.linearVelocity = gravity * gravityForce;
+		}
 	}
 
 	public void Hit(int bulletNum)
@@ -70,7 +81,6 @@ public class BlockBehaviour : MonoBehaviour
 			StrongKeyBlock skBlock = GetComponent<StrongKeyBlock>();
 			skBlock.BlockHit(bulletNum);
 			break;
-
 		}
 
 		

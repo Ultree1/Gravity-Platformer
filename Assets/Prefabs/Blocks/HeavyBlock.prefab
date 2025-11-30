@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 21155308089953282}
   - component: {fileID: -626438420419113095}
   - component: {fileID: 34363978423274934}
-  - component: {fileID: 89869525307110870}
+  - component: {fileID: -5216146536177225833}
   - component: {fileID: 8569446372718399169}
   m_Layer: 7
   m_Name: HeavyBlock
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1322416163143143608}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
@@ -167,7 +167,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &89869525307110870
+--- !u!114 &-5216146536177225833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3b8bca19c024d243b6437efe90a2300, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StandardBlock
+  m_EditorClassIdentifier: Assembly-CSharp::BlockBehaviour
   gravityForce: 3.2700002
   gravity: {x: 0, y: 0}
   blockType: 4
@@ -194,5 +194,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde7ea5bd5cee894fbfcc89cb9dbda98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeavyBlock
-  notDestroy: 4
   keySpawner: {fileID: 2872090331110212099, guid: 7396fd7564d305b41a1a7ea1928b534f, type: 3}

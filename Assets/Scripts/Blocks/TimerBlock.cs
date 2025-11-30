@@ -11,6 +11,7 @@ public class TimerBlock : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D>();
 		blockBehaviour = GetComponent<BlockBehaviour>();
+		rb.mass = 10;
 		rb.gravityScale = 0;
 		blockBehaviour.gravity = Vector2.down;
 	}

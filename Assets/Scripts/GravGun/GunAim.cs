@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class GunAim : MonoBehaviour
 {
@@ -9,6 +8,7 @@ public class GunAim : MonoBehaviour
 
     private GameObject bulletInst;
 
+    private Vector2 mousePosition;
     private Vector2 worldPosition;
     private Vector2 direction;
     private float angle;
@@ -22,7 +22,8 @@ public class GunAim : MonoBehaviour
     private void GunRotation()
     {
         // rotate gun towards mouse position
-        worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        mousePosition = Input.mousePosition;
+        worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         direction = (worldPosition - (Vector2)gun.transform.position).normalized;
         gun.transform.right = direction;
 
@@ -44,7 +45,7 @@ public class GunAim : MonoBehaviour
 
     private void GunShoot()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Input.GetMouseButtonDown(0))
         {
             // Spawn bullet
             bulletInst = Instantiate(bullet, bulletSpawnPoint.position, gun.transform.rotation);

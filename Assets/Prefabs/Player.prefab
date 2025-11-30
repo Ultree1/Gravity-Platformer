@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8344602278554766823}
   m_Layer: 0
   m_Name: Gun
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,8 +167,9 @@ GameObject:
   - component: {fileID: 149217360390129668}
   - component: {fileID: 1395432213126561016}
   - component: {fileID: 5226910050361653186}
-  - component: {fileID: 2849163190986622630}
   - component: {fileID: 2655753974170883797}
+  - component: {fileID: 8471899893142952371}
+  - component: {fileID: -5797724570540602665}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -260,7 +261,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9fec4254ce6070d43adb706a959d1c3d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -312,7 +313,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9fec4254ce6070d43adb706a959d1c3d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -323,20 +324,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2849163190986622630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7240613517226088696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67cad10169ff1e54daa31a018ae239e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 10
-  health: 0
 --- !u!114 &2655753974170883797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,8 +336,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151483fdaf46eaa42a4803b3330a33eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  moveSpeed: 5
-  jumpForce: 8
+  jumpForce: 5
   ground:
     serializedVersion: 2
     m_Bits: 192
+  moveSpeed: 5
+--- !u!114 &8471899893142952371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240613517226088696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36129cd672557342891e3516e621888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBehaviour
+  nextLevelDirection: 0
+  nextLevel: 
+--- !u!114 &-5797724570540602665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240613517226088696}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad11e6593cf3cc340bb84e3533129d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NextLevel
