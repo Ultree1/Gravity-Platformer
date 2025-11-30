@@ -5,12 +5,12 @@ public class PlayerMovementScript : MonoBehaviour
     private Rigidbody2D body;
 
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpForce = 8f;
+    [SerializeField] private float jumpForce = 5f;
     [SerializeField] private LayerMask ground;
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip jumpClip;
+
+
     private float inputAxis;
-    
+
 
     public bool grounded { get; private set; }
     public bool isJumping { get; private set; }
@@ -22,6 +22,8 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void Update()
 	{
+        Restart();
+
         grounded = body.Raycast(Vector2.down, ground);
         if (grounded)
 		{
@@ -40,15 +42,20 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void GroundedMovement()
 	{
-		if (Input.GetKey(KeyCode.Space) && isJumping == false)
+		if (Input.GetKeyDown(KeyCode.Space) && isJumping == false)
 		{
 			Vector2 currVelocity = body.linearVelocity;
             currVelocity.y = jumpForce;
             body.linearVelocity = currVelocity;
-            if (audioSource != null && jumpClip != null)
-            {
-                audioSource.PlayOneShot(jumpClip);
-            }
 		}
 	}
+
+    private void Restart()
+	{
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			GameManager.Instance.Restart();
+		}
+	}
+
 }
