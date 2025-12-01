@@ -179,7 +179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b8bca19c024d243b6437efe90a2300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StandardBlock
-  gravityForce: 3.2700002
   gravity: {x: 0, y: 0}
   blockType: 2
 --- !u!114 &4869652400514179107
@@ -194,4 +193,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e3dc8cec731b5479fb717a9ca54f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerBlock
-  resetTimer: 0.25
+  resetTimer: 0.375

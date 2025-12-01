@@ -5,7 +5,7 @@ public class TimerBlock : MonoBehaviour
 {
 	private Rigidbody2D rb;
 	private BlockBehaviour blockBehaviour;
-	public float resetTimer = 0.5f;
+	public float resetTimer = 1f;
 
 	private void Start()
 	{

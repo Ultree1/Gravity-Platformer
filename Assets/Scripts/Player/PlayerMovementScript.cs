@@ -4,18 +4,23 @@ public class PlayerMovementScript : MonoBehaviour
 {
     private Rigidbody2D body;
 
+    [HideInInspector] public float blockSpeed = 0f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private LayerMask ground;
+
     public float moveSpeed = 5f;
+    private float currVelX;
+    private float currMagX;
+    private float move = 0f;
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip jumpClip;
 
     private float inputAxis;
 
-
     public bool grounded { get; private set; }
     public bool isJumping { get; private set; }
+    public bool onBlock = false;
 
     private void Start()
     {
@@ -39,7 +44,56 @@ public class PlayerMovementScript : MonoBehaviour
     private void HorizontalMovement()
 	{
         inputAxis = Input.GetAxis("Horizontal");
-		body.linearVelocity = new Vector2(inputAxis * moveSpeed, body.linearVelocity.y);
+
+        currVelX = body.linearVelocity.x;
+        currMagX = Mathf.Abs(currVelX);
+
+        if (onBlock)
+		{
+			move = blockSpeed + (moveSpeed * inputAxis);
+		}
+        else if(!grounded)
+		{
+            move = calculateAirMovement(inputAxis, currVelX);
+		}
+        else
+		{
+			move = moveSpeed * inputAxis;
+		}
+
+        body.linearVelocity = new Vector2(move, body.linearVelocity.y);
+	}
+
+    private float calculateAirMovement(float inputAxis, float currVelX)
+	{
+        float movement = 0f;
+
+		if (inputAxis * currVelX <= 0)
+		{
+            if (currMagX > moveSpeed)
+            {
+		        movement = currVelX + (moveSpeed * inputAxis);
+            }
+
+            else
+			{
+				movement = moveSpeed * inputAxis;
+			}
+	    }
+
+        else
+        {
+            if (currVelX >= 0)
+            {
+	            movement = Mathf.Max(currVelX, moveSpeed * inputAxis);
+            }
+            else
+			{
+				movement = Mathf.Min(currVelX, moveSpeed * inputAxis);
+			}
+        }
+
+        return movement;
 	}
 
     private void GroundedMovement()

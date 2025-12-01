@@ -4,7 +4,7 @@ public class BlockBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-	public float gravityForce = 9.81f/3;
+	private float gravityForce = 9.81f;
     public Vector2 gravity;
 
 	private bool Antigrav = false;
@@ -30,7 +30,7 @@ public class BlockBehaviour : MonoBehaviour
 		}
 	}
 
-    private void Update()
+    private void FixedUpdate()
 	{
 		if (!Antigrav)
 		{
@@ -38,7 +38,30 @@ public class BlockBehaviour : MonoBehaviour
 		}
 		else
 		{
-			rb.linearVelocity = gravity * gravityForce;
+			rb.linearVelocity = gravity * (gravityForce/2);
+		}
+	}
+
+	private void OnCollisionStay2D(Collision2D collisionInfo)
+	{
+		if (collisionInfo.gameObject.CompareTag("Player"))
+		{
+			PlayerMovementScript playerMovement = collisionInfo.gameObject.GetComponent<PlayerMovementScript>();
+			if (collisionInfo.transform.DotTest(transform, Vector2.down))
+			{
+				playerMovement.blockSpeed = rb.linearVelocity.x;
+				playerMovement.onBlock = true;
+			}
+		}
+	}
+
+	private void OnCollisionExit2D(Collision2D collision)
+	{
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			PlayerMovementScript playerMovement = collision.gameObject.GetComponent<PlayerMovementScript>();
+			playerMovement.onBlock = false;
+			playerMovement.blockSpeed = 0;
 		}
 	}
 
