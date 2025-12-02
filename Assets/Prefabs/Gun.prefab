@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -971343153557842262, guid: a941afc41699e344188dcb7204da8fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,6 +139,8 @@ MonoBehaviour:
   gun: {fileID: 4990209363981004075}
   bulletSpawnPoint: {fileID: 7351818569424343579}
   bullet: {fileID: 6200781171767751207, guid: a915e179fda755b4ca2717c0095d07d3, type: 3}
+  audioSource: {fileID: 0}
+  gunFireClip: {fileID: 0}
 --- !u!114 &8344602278554766823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,3 +157,4 @@ MonoBehaviour:
   downBullet: {fileID: 6200781171767751207, guid: a915e179fda755b4ca2717c0095d07d3, type: 3}
   leftBullet: {fileID: 6200781171767751207, guid: 61fe1fb23d2b8bd4caf13056e352d09d, type: 3}
   rightBullet: {fileID: 6200781171767751207, guid: 75ed4158b12449047b978c277d9d6dbe, type: 3}
+  bulletType: 3
