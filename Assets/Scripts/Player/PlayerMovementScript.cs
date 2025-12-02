@@ -28,21 +28,32 @@ public class PlayerMovementScript : MonoBehaviour
     }
 
     private void Update()
-	{
+    {
         Restart();
 
-        grounded = body.Raycast(Vector2.down, ground);
-        if (grounded)
-		{
-            isJumping = body.linearVelocity.y > 0f;
-			GroundedMovement();
-		}
+        // Detect the correct direction for ground checks
+        Vector2 gravityDirection = PlayerGravity.Instance != null &&
+                                   PlayerGravity.Instance.IsGravityReversed()
+                                   ? Vector2.up
+                                   : Vector2.down;
 
-		HorizontalMovement();
-	}
+        grounded = body.Raycast(gravityDirection, ground);
+
+        if (grounded)
+        {
+            isJumping = PlayerGravity.Instance != null &&
+                        PlayerGravity.Instance.IsGravityReversed()
+                        ? body.linearVelocity.y < 0f
+                        : body.linearVelocity.y > 0f;
+
+            GroundedMovement();
+        }
+
+        HorizontalMovement();
+    }
 
     private void HorizontalMovement()
-	{
+    {
         inputAxis = Input.GetAxis("Horizontal");
 
         currVelX = body.linearVelocity.x;
@@ -97,26 +108,30 @@ public class PlayerMovementScript : MonoBehaviour
 	}
 
     private void GroundedMovement()
-	{
-		if (Input.GetKeyDown(KeyCode.Space) && isJumping == false)
-		{
-			Vector2 currVelocity = body.linearVelocity;
-            currVelocity.y = jumpForce;
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isJumping == false)
+        {
+            Vector2 currVelocity = body.linearVelocity;
+
+            currVelocity.y = PlayerGravity.Instance != null &&
+                             PlayerGravity.Instance.IsGravityReversed()
+                             ? -jumpForce
+                             : jumpForce;
+
             body.linearVelocity = currVelocity;
 
             if (audioSource != null && jumpClip != null)
-			{
-				audioSource.PlayOneShot(jumpClip);
-			}
-		}
-	}
+            {
+                audioSource.PlayOneShot(jumpClip);
+            }
+        }
+    }
 
     private void Restart()
-	{
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			GameManager.Instance.Restart();
-		}
-	}
-
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameManager.Instance.Restart();
+        }
+    }
 }
