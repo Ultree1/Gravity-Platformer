@@ -139,6 +139,8 @@ MonoBehaviour:
   gun: {fileID: 4990209363981004075}
   bulletSpawnPoint: {fileID: 7351818569424343579}
   bullet: {fileID: 6200781171767751207, guid: a915e179fda755b4ca2717c0095d07d3, type: 3}
+  audioSource: {fileID: 8825058355597088435}
+  gunFireClip: {fileID: 8300000, guid: c6e5b758479a84ad0ae48f70a3b6b191, type: 3}
 --- !u!114 &8344602278554766823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +172,7 @@ GameObject:
   - component: {fileID: 5226910050361653186}
   - component: {fileID: 2655753974170883797}
   - component: {fileID: 8471899893142952371}
+  - component: {fileID: 8825058355597088435}
   - component: {fileID: -5797724570540602665}
   m_Layer: 0
   m_Name: Player
@@ -337,13 +340,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151483fdaf46eaa42a4803b3330a33eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  blockSpeed: 0
   jumpForce: 5
   ground:
     serializedVersion: 2
     m_Bits: 704
   moveSpeed: 5
-  audioSource: {fileID: 0}
-  jumpClip: {fileID: 0}
+  audioSource: {fileID: 8825058355597088435}
+  jumpClip: {fileID: 8300000, guid: 864bc0f2a5bac493182c4793df10a422, type: 3}
+  onBlock: 0
 --- !u!114 &8471899893142952371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +363,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBehaviour
   nextLevelDirection: 0
   nextLevel: 
+--- !u!82 &8825058355597088435
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240613517226088696}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &-5797724570540602665
 MonoBehaviour:
   m_ObjectHideFlags: 0

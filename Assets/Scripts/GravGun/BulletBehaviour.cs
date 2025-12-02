@@ -35,25 +35,21 @@ public class BulletBehaviour : MonoBehaviour
     {
         if (bulletType == BulletType.RightGrav)
         {
-            spriteRenderer.color = Color.red;
             bulletNum = 0;
         }
 
         else if (bulletType == BulletType.UpGrav)
         {
-            spriteRenderer.color = Color.white;
             bulletNum = 1;
         }
 
         else if (bulletType == BulletType.LeftGrav)
         {
-            spriteRenderer.color = Color.blue;
             bulletNum = 2;
         }
 
         else if (bulletType == BulletType.DownGrav)
         {
-            spriteRenderer.color = Color.black;
             bulletNum = 3;
         }        
     }
