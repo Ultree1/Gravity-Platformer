@@ -674,6 +674,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc5af93518d7a504d90798a957b45298, type: 3}
+--- !u!114 &511005621 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1734274137672534399, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+  m_PrefabInstance: {fileID: 959881022}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f017f77d1239cd40bd5caaefdb35a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuManager
+--- !u!114 &563401050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3857270141899032886, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+  m_PrefabInstance: {fileID: 959881022}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe966d05b010e41f5bd81d0cc1dea458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
 --- !u!1 &776377072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1081,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3ba459a615526b47a0360d2eb9107cd, type: 3}
+--- !u!114 &892118334 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5103543888741774624, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+  m_PrefabInstance: {fileID: 959881022}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b86e6cf767bdd4299fb08def27debb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseManager
 --- !u!1001 &959881022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1199,8 +1232,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6356895571028264210, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 563401050}
+    - target: {fileID: 6356895571028264210, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 892118334}
+    - target: {fileID: 6356895571028264210, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356895571028264210, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356895571028264210, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIButtonSound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356895571028264210, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PauseManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8818820934018286811, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843053779529211318, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843053779529211318, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 511005621}
+    - target: {fileID: 8843053779529211318, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843053779529211318, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResetLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843053779529211318, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIButtonSound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843053779529211318, guid: d547bb690f8d627439425705b8ede99f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8792124639241529354, guid: d547bb690f8d627439425705b8ede99f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d547bb690f8d627439425705b8ede99f, type: 3}

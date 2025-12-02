@@ -4,6 +4,7 @@ public class PlayerMovementScript : MonoBehaviour
 {
     private Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
+    private PlayerAnimation playerAnimation;
 
     [HideInInspector] public float blockSpeed = 0f;
     [SerializeField] private float jumpForce = 5f;
@@ -28,6 +29,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerAnimation = GetComponent<PlayerAnimation>();
     }
 
     private void Update()
@@ -55,16 +57,24 @@ public class PlayerMovementScript : MonoBehaviour
         HorizontalMovement();
     }
 
-    private void HorizontalMovement()
-    {
-        inputAxis = Input.GetAxis("Horizontal");
+    private void LateUpdate()
+	{
         if (inputAxis == 1)
         {
             spriteRenderer.flipX = false;
         }
-        else if (inputAxis == -1){
+
+        else if (inputAxis == -1)
+        {
             spriteRenderer.flipX = true;
         }
+		PlayerAnimate();
+	}
+
+    private void HorizontalMovement()
+    {
+        inputAxis = Input.GetAxis("Horizontal");
+
         currVelX = body.linearVelocity.x;
         currMagX = Mathf.Abs(currVelX);
 
@@ -86,9 +96,9 @@ public class PlayerMovementScript : MonoBehaviour
 
     private float calculateAirMovement(float inputAxis, float currVelX)
 	{
-        float movement = 0f;
+        float movement;
 
-		if (inputAxis * currVelX <= 0)
+		if (inputAxis * currVelX < 0)
 		{
             if (currMagX > moveSpeed)
             {
@@ -135,6 +145,18 @@ public class PlayerMovementScript : MonoBehaviour
             }
         }
     }
+
+    private void PlayerAnimate()
+	{
+		if (body.linearVelocity.x != 0)
+		{
+			playerAnimation.enabled = true;
+		}
+        else
+		{
+			playerAnimation.enabled = false;
+		}
+	}
 
     private void Restart()
     {
