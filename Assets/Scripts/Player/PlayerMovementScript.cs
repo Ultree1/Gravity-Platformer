@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovementScript : MonoBehaviour
 {
     private Rigidbody2D body;
+    private SpriteRenderer spriteRenderer;
 
     [HideInInspector] public float blockSpeed = 0f;
     [SerializeField] private float jumpForce = 5f;
@@ -26,6 +27,7 @@ public class PlayerMovementScript : MonoBehaviour
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -56,7 +58,13 @@ public class PlayerMovementScript : MonoBehaviour
     private void HorizontalMovement()
     {
         inputAxis = Input.GetAxis("Horizontal");
-
+        if (inputAxis == 1)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (inputAxis == -1){
+            spriteRenderer.flipX = true;
+        }
         currVelX = body.linearVelocity.x;
         currMagX = Mathf.Abs(currVelX);
 
