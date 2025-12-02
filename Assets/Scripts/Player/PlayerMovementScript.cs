@@ -113,7 +113,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         else
         {
-            if (currVelX >= 0)
+            if (inputAxis > 0)
             {
 	            movement = Mathf.Max(currVelX, moveSpeed * inputAxis);
             }
