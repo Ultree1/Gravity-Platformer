@@ -8,6 +8,7 @@ public class BlockBehaviour : MonoBehaviour
     public Vector2 gravity;
 
     private bool Antigrav = false;
+    private bool staticPos = false;
 
     public enum BlockType
     {
@@ -25,6 +26,10 @@ public class BlockBehaviour : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+		{
+			staticPos = true;
+		}
         if (blockType == BlockType.Antigrav || blockType == BlockType.AntigravTimer)
         {
             Antigrav = true;
@@ -33,14 +38,17 @@ public class BlockBehaviour : MonoBehaviour
 
     private void FixedUpdate()
 	{
-		if (!Antigrav)
-		{
-			rb.AddForce(gravity * gravityForce * rb.mass, ForceMode2D.Force);
-		}
-		else
-		{
-			rb.linearVelocity = gravity * (gravityForce/2);
-		}
+        if (!staticPos)
+        {
+		    if (!Antigrav)
+		    {
+			    rb.AddForce(gravity * gravityForce * rb.mass, ForceMode2D.Force);
+		    }
+		    else
+		    {
+			    rb.linearVelocity = gravity * (gravityForce/2);
+		    }
+        }
 	}
 
 	private void OnCollisionStay2D(Collision2D collisionInfo)
@@ -48,7 +56,9 @@ public class BlockBehaviour : MonoBehaviour
 		if (collisionInfo.gameObject.CompareTag("Player"))
 		{
 			PlayerMovementScript playerMovement = collisionInfo.gameObject.GetComponent<PlayerMovementScript>();
-			if (collisionInfo.transform.DotTest(transform, Vector2.down))
+            Vector2 playerGravDirection = playerMovement.gravityDirection;
+
+			if (collisionInfo.transform.DotTest(transform, playerGravDirection))
 			{
 				playerMovement.blockSpeed = rb.linearVelocity.x;
 				playerMovement.onBlock = true;

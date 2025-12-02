@@ -8,6 +8,7 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private LayerMask ground;
 
+    public Vector2 gravityDirection;
     public float moveSpeed = 5f;
     private float currVelX;
     private float currMagX;
@@ -32,10 +33,10 @@ public class PlayerMovementScript : MonoBehaviour
         Restart();
 
         // Detect the correct direction for ground checks
-        Vector2 gravityDirection = PlayerGravity.Instance != null &&
-                                   PlayerGravity.Instance.IsGravityReversed()
-                                   ? Vector2.up
-                                   : Vector2.down;
+        gravityDirection = PlayerGravity.Instance != null &&
+                                PlayerGravity.Instance.IsGravityReversed()
+                                ? Vector2.up
+                                : Vector2.down;
 
         grounded = body.Raycast(gravityDirection, ground);
 

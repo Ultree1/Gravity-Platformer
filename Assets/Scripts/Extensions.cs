@@ -12,10 +12,11 @@ public static class Extensions
             return false;
         }
 
-        float radius = 0.5f;
-        float distance = 0.375f;
+        float length = 0.5f;
+        float distance = 0.8f;
+        Vector2 size = new Vector2(length, length);
 
-        RaycastHit2D hit = Physics2D.CircleCast(rigidbody.position, radius, direction.normalized, distance, layerMask);
+        RaycastHit2D hit = Physics2D.BoxCast(rigidbody.position, size, 0f, direction.normalized, distance, layerMask);
         return hit.collider != null && hit.rigidbody != rigidbody;
     }
 
@@ -25,10 +26,11 @@ public static class Extensions
             return false;
         }
 
-        float radius = 0.25f;
-        float distance = 0.375f;
+        float length = 0.5f;
+        float distance = 0.8f;
+        Vector2 size = new Vector2(length, length);
 
-        RaycastHit2D hit = Physics2D.CircleCast(rigidbody.position, radius, direction.normalized, distance, layerMask);
+        RaycastHit2D hit = Physics2D.BoxCast(rigidbody.position, size, 0f, direction.normalized, distance, layerMask);
         return hit.collider != null && hit.rigidbody != rigidbody;
     }
 

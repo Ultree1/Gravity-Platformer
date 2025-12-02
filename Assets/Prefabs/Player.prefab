@@ -293,13 +293,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.73, y: 4.99}
+    oldSize: {x: 1.092, y: 1.996}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
 --- !u!50 &5226910050361653186
 Rigidbody2D:
@@ -345,6 +345,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 704
+  gravityDirection: {x: 0, y: 0}
   moveSpeed: 5
   audioSource: {fileID: 8825058355597088435}
   jumpClip: {fileID: 8300000, guid: 864bc0f2a5bac493182c4793df10a422, type: 3}
